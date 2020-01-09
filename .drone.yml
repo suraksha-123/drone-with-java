@@ -1,6 +1,13 @@
-build:
+kind: pipeline
+name: default
+workspace:
+  base: /tmp
+  path: "."
+steps:
+- name: build
   image: java:openjdk-7
   environment:
     - GRADLE_USER_HOME=~/.gradle
   commands:
-    - ./gradlew test
+  - ./gradlew test
+
